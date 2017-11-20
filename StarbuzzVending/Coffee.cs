@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StarbuzzVending
+﻿namespace StarbuzzVending
 {
     public abstract class Coffee : IBeverage
     {

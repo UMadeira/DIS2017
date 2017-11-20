@@ -34,6 +34,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{94ABCC60-3C41-430F-8C9C-A7DA64C79AD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIS.Logging", "DIS.Logging\DIS.Logging.csproj", "{8A5D2C7F-BF50-432E-B659-057CC0B9FA13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIS.Logging.Forms", "DIS.Logging.Forms\DIS.Logging.Forms.csproj", "{88DE9B49-B8B0-47F4-A0D7-8F601181762F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,8 +98,20 @@ Global
 		{72FCCE4C-E5E3-4AA5-A6A6-8D6E8DCAD6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FCCE4C-E5E3-4AA5-A6A6-8D6E8DCAD6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FCCE4C-E5E3-4AA5-A6A6-8D6E8DCAD6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5D2C7F-BF50-432E-B659-057CC0B9FA13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5D2C7F-BF50-432E-B659-057CC0B9FA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5D2C7F-BF50-432E-B659-057CC0B9FA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5D2C7F-BF50-432E-B659-057CC0B9FA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A5D2C7F-BF50-432E-B659-057CC0B9FA13} = {94ABCC60-3C41-430F-8C9C-A7DA64C79AD9}
+		{88DE9B49-B8B0-47F4-A0D7-8F601181762F} = {94ABCC60-3C41-430F-8C9C-A7DA64C79AD9}
 	EndGlobalSection
 EndGlobal
