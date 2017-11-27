@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise2", "Exercise2\Exercise2.csproj", "{FA04D51B-0292-46B2-A1A8-23BA755EBAE5}"
 EndProject
@@ -39,6 +39,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIS.Logging", "DIS.Logging\DIS.Logging.csproj", "{8A5D2C7F-BF50-432E-B659-057CC0B9FA13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIS.Logging.Forms", "DIS.Logging.Forms\DIS.Logging.Forms.csproj", "{88DE9B49-B8B0-47F4-A0D7-8F601181762F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Christmas", "Christmas", "{32BA2663-F803-4CEF-ABF2-4440356F2092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Christmas.Entities", "Chrismas\Christmas.Entities\Christmas.Entities.csproj", "{53E1669F-9FA8-4747-B496-DDD6E229B8DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Christmas.Patterns", "Chrismas\Christmas.Patterns\Christmas.Patterns.csproj", "{673CF5A8-35F8-4239-A08B-99AD16A75623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Christmas.Shopping", "Chrismas\Christmas.Shopping\Christmas.Shopping.csproj", "{DCC30C75-0B67-4333-B379-A715E4DBC70C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +114,18 @@ Global
 		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88DE9B49-B8B0-47F4-A0D7-8F601181762F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E1669F-9FA8-4747-B496-DDD6E229B8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E1669F-9FA8-4747-B496-DDD6E229B8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E1669F-9FA8-4747-B496-DDD6E229B8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E1669F-9FA8-4747-B496-DDD6E229B8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{673CF5A8-35F8-4239-A08B-99AD16A75623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{673CF5A8-35F8-4239-A08B-99AD16A75623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{673CF5A8-35F8-4239-A08B-99AD16A75623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{673CF5A8-35F8-4239-A08B-99AD16A75623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC30C75-0B67-4333-B379-A715E4DBC70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC30C75-0B67-4333-B379-A715E4DBC70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC30C75-0B67-4333-B379-A715E4DBC70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC30C75-0B67-4333-B379-A715E4DBC70C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,5 +133,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8A5D2C7F-BF50-432E-B659-057CC0B9FA13} = {94ABCC60-3C41-430F-8C9C-A7DA64C79AD9}
 		{88DE9B49-B8B0-47F4-A0D7-8F601181762F} = {94ABCC60-3C41-430F-8C9C-A7DA64C79AD9}
+		{53E1669F-9FA8-4747-B496-DDD6E229B8DB} = {32BA2663-F803-4CEF-ABF2-4440356F2092}
+		{673CF5A8-35F8-4239-A08B-99AD16A75623} = {32BA2663-F803-4CEF-ABF2-4440356F2092}
+		{DCC30C75-0B67-4333-B379-A715E4DBC70C} = {32BA2663-F803-4CEF-ABF2-4440356F2092}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6815ED8D-E940-4618-B588-77FEA6C5913D}
 	EndGlobalSection
 EndGlobal
