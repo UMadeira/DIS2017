@@ -21,12 +21,12 @@ namespace Christmas.Shopping
             var person = new Person();
             person.Name = "Noname Person";
 
-            var node = new TreeNodeObserver();
+            var node = new TreeNode();
             node.Text = person.Name;
             node.ImageIndex = node.SelectedImageIndex = 1;
             node.Tag = person;
 
-            person.Attach( node );
+            person.OnUpdate += ( s, data ) => node.Text = person.Name;
 
             var family = mTreeView.SelectedNode?.Tag as Family;
             if ( family == null )
@@ -45,12 +45,12 @@ namespace Christmas.Shopping
             var family = new Family();
             family.Name = "Noname Family";
 
-            var node = new TreeNodeObserver();
+            var node = new TreeNode();
             node.Text = family.Name;
             node.ImageIndex = node.SelectedImageIndex = 2;
             node.Tag = family;
 
-            family.Attach( node );
+            family.OnUpdate += ( s, data ) => node.Text = family.Name;
 
             mTreeView.Nodes.Add(node);
         }
