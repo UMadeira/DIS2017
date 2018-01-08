@@ -4,12 +4,12 @@ using Christmas.Patterns.ObserverCanonical;
 
 namespace Christmas.Shopping
 {
-    class TreeNodeObserver : TreeNode, IObserver
+    internal class TreeNodeObserver : TreeNode, IObserver
     {
         public void Update( object sender, object data )
         {
-            var receiver = this.Tag as Receiver;
-            this.Text = receiver.Name;
+            var receiver = Tag as Receiver;
+            Text = receiver?.Name ?? string.Empty;
         }
     }
 }
