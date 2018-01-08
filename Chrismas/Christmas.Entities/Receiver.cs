@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Christmas.Patterns.Observer2;
+using Christmas.Patterns.Observer;
 
 namespace Christmas.Entities
 {
@@ -16,8 +16,8 @@ namespace Christmas.Entities
 
         public string Name
         {
-            get { return mName; }
-            set { mName = value;  OnUpdate?.Invoke( this, "Name"); }
+            get => mName;
+            set { mName = value;  OnUpdate?.Invoke( this, nameof(Name) ); }
         }
 
         public ICollection<Gift> Gifts { get; }

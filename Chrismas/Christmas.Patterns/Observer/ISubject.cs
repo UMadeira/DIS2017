@@ -1,10 +1,9 @@
 ﻿namespace Christmas.Patterns.Observer
 {
+    public delegate void UpdateHandler( object sender, object data );
+
     public interface ISubject
     {
-        void Attach( IObserver aObserver );
-        void Detach( IObserver aObserver );
-
-        void Notify( object aSender, object aData );
+        event UpdateHandler OnUpdate;
     }
 }

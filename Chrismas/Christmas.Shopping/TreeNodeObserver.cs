@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using Christmas.Entities;
-using Christmas.Patterns.Observer;
+using Christmas.Patterns.ObserverCanonical;
 
 namespace Christmas.Shopping
 {
