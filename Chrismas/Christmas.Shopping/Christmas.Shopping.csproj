@@ -51,6 +51,8 @@
     <Compile Include="ChangeNameForm.Designer.cs">
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commands\CommandCreateNode.cs" />
+    <Compile Include="Commands\CommandCreatePerson.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

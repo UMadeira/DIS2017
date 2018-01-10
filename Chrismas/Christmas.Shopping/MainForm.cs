@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using Christmas.Entities;
+using Christmas.Patterns.Commands;
+using Christmas.Shopping.Commands;
 
 namespace Christmas.Shopping
 {
     public partial class MainForm : Form
     {
+        private ICommand Command { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
@@ -18,26 +22,28 @@ namespace Christmas.Shopping
 
         private void OnAddPerson(object sender, EventArgs e)
         {
-            var person = new Person();
-            person.Name = "Noname Person";
-
-            var node = new TreeNode();
-            node.Text = person.Name;
-            node.ImageIndex = node.SelectedImageIndex = 1;
-            node.Tag = person;
-
-            person.OnUpdate += ( s, data ) => node.Text = person.Name;
+            TreeNodeCollection collection;
 
             var family = mTreeView.SelectedNode?.Tag as Family;
-            if ( family == null )
+            if (family == null)
             {
-                mTreeView.Nodes.Add(node);
+                collection = mTreeView.Nodes;
             }
             else
             {
-                mTreeView.SelectedNode.Nodes.Add( node );
+                collection = mTreeView.SelectedNode.Nodes;
             }
 
+            var macro = new MacroCommand();
+
+            var command1 = new CommandCreatePerson("Noname Person");
+            command1.Execute();
+            macro.Add(command1);
+
+            var command2 = new CommandCreateNode(collection, command1.Person);
+            macro.Add( command2 );
+
+            CommandsManager.Instance.Execute( macro );
         }
 
         private void OnAddFamily(object sender, EventArgs e)
@@ -65,6 +71,16 @@ namespace Christmas.Shopping
             {
                 receiver.Name = dialog.Value;
             }
+        }
+
+        private void OnUndo(object sender, EventArgs e)
+        {
+            CommandsManager.Instance.Undo();
+        }
+
+        private void OnRedo(object sender, EventArgs e)
+        {
+            CommandsManager.Instance.Redo();
         }
     }
 }
