@@ -13,6 +13,8 @@ namespace Christmas.Shopping
         public MainForm()
         {
             InitializeComponent();
+            CommandsManager.Instance.Notify += (s, a) => mUndoButton.Enabled = mUndoMenuItem.Enabled = CommandsManager.Instance.HasUndo;
+            CommandsManager.Instance.Notify += (s, a) => mRedoButton.Enabled = mRedoMenuItem.Enabled = CommandsManager.Instance.HasRedo;
         }
 
         private void OnExit(object sender, EventArgs e)
@@ -22,17 +24,8 @@ namespace Christmas.Shopping
 
         private void OnAddPerson(object sender, EventArgs e)
         {
-            TreeNodeCollection collection;
-
             var family = mTreeView.SelectedNode?.Tag as Family;
-            if (family == null)
-            {
-                collection = mTreeView.Nodes;
-            }
-            else
-            {
-                collection = mTreeView.SelectedNode.Nodes;
-            }
+            var collection = family == null ? mTreeView.Nodes : mTreeView.SelectedNode.Nodes;
 
             var macro = new MacroCommand();
 
@@ -40,7 +33,7 @@ namespace Christmas.Shopping
             command1.Execute();
             macro.Add(command1);
 
-            var command2 = new CommandCreateNode(collection, command1.Person);
+            var command2 = new CommandCreateNode( collection, 1, command1.Person );
             macro.Add( command2 );
 
             CommandsManager.Instance.Execute( macro );
@@ -48,17 +41,16 @@ namespace Christmas.Shopping
 
         private void OnAddFamily(object sender, EventArgs e)
         {
-            var family = new Family();
-            family.Name = "Noname Family";
+            var macro = new MacroCommand();
 
-            var node = new TreeNode();
-            node.Text = family.Name;
-            node.ImageIndex = node.SelectedImageIndex = 2;
-            node.Tag = family;
+            var command1 = new CommandCreateFamily("Noname Family");
+            command1.Execute();
+            macro.Add(command1);
 
-            family.OnUpdate += ( s, data ) => node.Text = family.Name;
+            var command2 = new CommandCreateNode( mTreeView.Nodes, 2, command1.Family );
+            macro.Add(command2);
 
-            mTreeView.Nodes.Add(node);
+            CommandsManager.Instance.Execute(macro);
         }
 
         private void OnDoubleClick(object sender, EventArgs e)
@@ -81,6 +73,16 @@ namespace Christmas.Shopping
         private void OnRedo(object sender, EventArgs e)
         {
             CommandsManager.Instance.Redo();
+        }
+
+        private void OnBeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+
+        }
+
+        private void OnAfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+
         }
     }
 }

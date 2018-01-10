@@ -43,10 +43,7 @@
     <Compile Include="Commands\CommandsManager.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\MacroCommand.cs" />
-    <Compile Include="Observer2\ISubject.cs" />
-    <Compile Include="Observer\IObserver.cs" />
     <Compile Include="Observer\ISubject.cs" />
-    <Compile Include="Observer\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

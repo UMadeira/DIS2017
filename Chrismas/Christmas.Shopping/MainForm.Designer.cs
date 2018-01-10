@@ -43,8 +43,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mUndoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mRedoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,8 +63,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.mUndoButton = new System.Windows.Forms.ToolStripButton();
+            this.mRedoButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.mTreeView = new System.Windows.Forms.TreeView();
             this.mImageList = new System.Windows.Forms.ImageList(this.components);
@@ -177,8 +178,8 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.redoToolStripMenuItem,
+            this.mUndoMenuItem,
+            this.mRedoMenuItem,
             this.toolStripSeparator3,
             this.cutToolStripMenuItem,
             this.copyToolStripMenuItem,
@@ -189,21 +190,23 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // undoToolStripMenuItem
+            // mUndoMenuItem
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.undoToolStripMenuItem.Text = "&Undo";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.OnUndo);
+            this.mUndoMenuItem.Enabled = false;
+            this.mUndoMenuItem.Name = "mUndoMenuItem";
+            this.mUndoMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.mUndoMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mUndoMenuItem.Text = "&Undo";
+            this.mUndoMenuItem.Click += new System.EventHandler(this.OnUndo);
             // 
-            // redoToolStripMenuItem
+            // mRedoMenuItem
             // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.redoToolStripMenuItem.Text = "&Redo";
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.OnRedo);
+            this.mRedoMenuItem.Enabled = false;
+            this.mRedoMenuItem.Name = "mRedoMenuItem";
+            this.mRedoMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.mRedoMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mRedoMenuItem.Text = "&Redo";
+            this.mRedoMenuItem.Click += new System.EventHandler(this.OnRedo);
             // 
             // toolStripSeparator3
             // 
@@ -315,8 +318,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.toolStripSeparator6,
+            this.mUndoButton,
+            this.mRedoButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(694, 25);
@@ -343,23 +347,33 @@
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.OnAddFamily);
             // 
-            // toolStripButton3
+            // toolStripSeparator6
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "P";
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton4
+            // mUndoButton
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "F";
+            this.mUndoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.mUndoButton.Enabled = false;
+            this.mUndoButton.Image = ((System.Drawing.Image)(resources.GetObject("mUndoButton.Image")));
+            this.mUndoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mUndoButton.Name = "mUndoButton";
+            this.mUndoButton.Size = new System.Drawing.Size(23, 22);
+            this.mUndoButton.Text = "Undo";
+            this.mUndoButton.Click += new System.EventHandler(this.OnUndo);
+            // 
+            // mRedoButton
+            // 
+            this.mRedoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.mRedoButton.Enabled = false;
+            this.mRedoButton.Image = ((System.Drawing.Image)(resources.GetObject("mRedoButton.Image")));
+            this.mRedoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mRedoButton.Name = "mRedoButton";
+            this.mRedoButton.Size = new System.Drawing.Size(23, 22);
+            this.mRedoButton.Text = "Redo";
+            this.mRedoButton.ToolTipText = "Redo";
+            this.mRedoButton.Click += new System.EventHandler(this.OnRedo);
             // 
             // statusStrip1
             // 
@@ -374,12 +388,14 @@
             this.mTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mTreeView.ImageIndex = 0;
             this.mTreeView.ImageList = this.mImageList;
+            this.mTreeView.LabelEdit = true;
             this.mTreeView.Location = new System.Drawing.Point(0, 49);
             this.mTreeView.Name = "mTreeView";
             this.mTreeView.SelectedImageIndex = 0;
             this.mTreeView.Size = new System.Drawing.Size(694, 292);
             this.mTreeView.TabIndex = 3;
-            this.mTreeView.DoubleClick += new System.EventHandler(this.OnDoubleClick);
+            this.mTreeView.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.OnBeforeLabelEdit);
+            this.mTreeView.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.OnAfterLabelEdit);
             // 
             // mImageList
             // 
@@ -400,7 +416,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Christmas Shopping List";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -425,8 +441,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mUndoMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mRedoMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
@@ -447,9 +463,10 @@
         private System.Windows.Forms.TreeView mTreeView;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ImageList mImageList;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton mUndoButton;
+        private System.Windows.Forms.ToolStripButton mRedoButton;
     }
 }
 

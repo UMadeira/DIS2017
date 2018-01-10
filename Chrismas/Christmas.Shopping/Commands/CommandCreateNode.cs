@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Christmas.Entities;
+﻿using System.Windows.Forms;
 using Christmas.Patterns.Commands;
+using Christmas.Patterns.Observer;
 
 namespace Christmas.Shopping.Commands
 {
     public class CommandCreateNode : ICommand
     {
-        public CommandCreateNode( TreeNodeCollection aNodes, Receiver aReceiver )
+        public CommandCreateNode( TreeNodeCollection aNodes, int aImage, ISubject aSubject )
         {
             Nodes = aNodes;
 
-            Node = new TreeNode();
-            Node.Text = aReceiver.Name;
-            Node.ImageIndex = Node.SelectedImageIndex = 1;
-            Node.Tag = aReceiver;
+            Node = new TreeNode { Text = aSubject.ToString() };
+            Node.ImageIndex = Node.SelectedImageIndex = aImage;
+            Node.Tag = aSubject;
 
-            aReceiver.OnUpdate += ( sender, data ) => Node.Text = aReceiver.Name;
+            aSubject.OnUpdate += ( sender, data ) => Node.Text = aSubject.ToString();
         }
 
         public TreeNodeCollection Nodes { get; }

@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Christmas.Patterns.Commands
 {
     public class CommandsManager
     {
         #region Singleton
-        static CommandsManager() { }
+        static  CommandsManager() { }
         private CommandsManager() { }
 
         public static CommandsManager Instance { get; } = new CommandsManager();
@@ -22,9 +19,9 @@ namespace Christmas.Patterns.Commands
 
         private int Position { get; set; } = -1;
 
-        private bool HasUndo => Position > -1;
+        public bool HasUndo => Position > -1;
 
-        private bool HasRedo => Position < Commands.Count - 1;
+        public bool HasRedo => Position < Commands.Count - 1;
 
         public void Execute( ICommand aCommand )
         {
@@ -32,7 +29,7 @@ namespace Christmas.Patterns.Commands
 
             if ( HasRedo )
             {
-                Commands.RemoveRange( Position + 1, Commands.Count - Position + 1 );
+                Commands.RemoveRange( Position + 1, Commands.Count - ( Position + 1 ) );
             }
 
             aCommand.Execute();
@@ -60,6 +57,5 @@ namespace Christmas.Patterns.Commands
 
             Notify?.Invoke(this, EventArgs.Empty);
         }
-
     }
 }

@@ -21,5 +21,7 @@ namespace Christmas.Entities
         }
 
         public ICollection<Gift> Gifts { get; }
+
+        public override string ToString() => Name;
     }
 }

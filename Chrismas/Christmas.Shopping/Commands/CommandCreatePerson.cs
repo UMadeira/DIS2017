@@ -21,8 +21,7 @@ namespace Christmas.Shopping.Commands
 
         public void Execute()
         {
-            Person = new Person();
-            Person.Name = Name;
+            Person = new Person { Name = Name };
         }
 
         public void Undo()

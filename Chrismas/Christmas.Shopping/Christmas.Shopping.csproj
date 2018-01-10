@@ -52,6 +52,7 @@
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Commands\CommandCreateNode.cs" />
+    <Compile Include="Commands\CommandCreateFamily.cs" />
     <Compile Include="Commands\CommandCreatePerson.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -61,7 +62,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TreeNodeObserver.cs" />
     <EmbeddedResource Include="ChangeNameForm.resx">
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
     </EmbeddedResource>
