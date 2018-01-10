@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Christmas.Patterns.Observer
+namespace Christmas.Patterns.ObserverCanonical
 {
     public class Subject : ISubject
     {

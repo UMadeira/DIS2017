@@ -1,4 +1,4 @@
-﻿namespace Christmas.Patterns.Observer
+﻿namespace Christmas.Patterns.ObserverCanonical
 {
     public interface IObserver
     {
