@@ -8,8 +8,6 @@ namespace Christmas.Shopping
 {
     public partial class MainForm : Form
     {
-        private ICommand Command { get; set; }
-
         public MainForm()
         {
             InitializeComponent();
@@ -20,6 +18,16 @@ namespace Christmas.Shopping
         private void OnExit(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OnUndo( object sender, EventArgs e )
+        {
+            CommandsManager.Instance.Undo();
+        }
+
+        private void OnRedo( object sender, EventArgs e )
+        {
+            CommandsManager.Instance.Redo();
         }
 
         private void OnAddPerson(object sender, EventArgs e)
@@ -55,34 +63,12 @@ namespace Christmas.Shopping
 
         private void OnDoubleClick(object sender, EventArgs e)
         {
-            var receiver = mTreeView.SelectedNode?.Tag as Receiver;
-            if ( receiver == null ) return;
-
-            var dialog = new ChangeNameForm( receiver.Name );
-            if ( dialog.ShowDialog() == DialogResult.OK )
-            {
-                receiver.Name = dialog.Value;
-            }
+            mTreeView.SelectedNode?.BeginEdit();
         }
 
-        private void OnUndo(object sender, EventArgs e)
+        private void OnAfterLabelEdit(object sender, NodeLabelEditEventArgs args)
         {
-            CommandsManager.Instance.Undo();
-        }
-
-        private void OnRedo(object sender, EventArgs e)
-        {
-            CommandsManager.Instance.Redo();
-        }
-
-        private void OnBeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
-        {
-
-        }
-
-        private void OnAfterLabelEdit(object sender, NodeLabelEditEventArgs e)
-        {
-
+            CommandsManager.Instance.Execute( new CommandModifyName( args.Node.Tag as Receiver, args.Label ) );
         }
     }
 }

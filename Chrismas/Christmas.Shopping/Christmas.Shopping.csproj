@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Commands\CommandCreateNode.cs" />
     <Compile Include="Commands\CommandCreateFamily.cs" />
+    <Compile Include="Commands\CommandModifyName.cs" />
     <Compile Include="Commands\CommandCreatePerson.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
